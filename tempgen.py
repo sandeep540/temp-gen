@@ -10,7 +10,7 @@ def get_data():
 
     # Producer instance
     my_data = {'temperature' : random.randint(1, 100), 'id' : str(uuid.uuid4())}
-    prod = KafkaProducer(bootstrap_servers=['redpanda:51209','redpanda:51214','redpanda:51215'],value_serializer = lambda x:dumps(x).encode('utf-8'))
+    prod = KafkaProducer(bootstrap_servers=['localhost:51209','localhost:51214','localhost:51215'],value_serializer = lambda x:dumps(x).encode('utf-8'))
     print(my_data)
     prod.send(topic='temperatures', value=my_data)
     prod.flush()
