@@ -10,4 +10,6 @@ ADD tempgen.py .
 CMD ["python", "-u", "./tempgen.py"]
 
 # docker build -t tempgen .
-# docker run -it --rm tempgen
+# docker run --network=host -it --rm tempgen 
+
+#KAFKA_BROKERS=localhost:54595,localhost:54601,localhost:54600
